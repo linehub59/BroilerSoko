@@ -399,7 +399,7 @@ const usingDemo = firebaseReady && listings.length === 0;
             <h2>Turn your stock into sales.</h2>
             <p>Join the marketplace and connect with potential chicken buyers.</p>
           </div>
-          <a className="primaryButton" href="mailto:hello@broilersoko.co.ke?subject=Broiler%20Soko%20Seller%20Registration">
+          <a className="primaryButton" href="https://broilerseller.onrender.com">
             Register interest <MessageCircle size={18} />
           </a>
         </section>
