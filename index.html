@@ -5,47 +5,7 @@
     <link rel="icon" type="image/png" href="/logo.png" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>BroilerSoko</title>
-        <script type="module">
-import { initializeApp } from "https://www.gstatic.com/firebasejs/11.6.0/firebase-app.js";
-import {
-  getFirestore,
-  collection,
-  addDoc,
-  serverTimestamp
-} from "https://www.gstatic.com/firebasejs/11.6.0/firebase-firestore.js";
-
-const app = initializeApp({}, "castiel-" + "h2gcSzCjKDJbARhhYPJT");
-const db = getFirestore(app);
-const siteId = "h2gcSzCjKDJbARhhYPJT";
-const key = "castiel-visitor-" + siteId;
-
-function visitorId() {
-  try {
-    let id = localStorage.getItem(key);
-    if (!id) {
-      id = crypto.randomUUID();
-      localStorage.setItem(key, id);
-    }
-    return id;
-  } catch {
-    return crypto.randomUUID();
-  }
-}
-
-const host = location.hostname.toLowerCase().replace(/^www\\./, "");
-const page = location.pathname + location.search;
-
-if (host && page.length <= 1500) {
-  addDoc(collection(db, "analyticsEvents"), {
-    siteId,
-    page,
-    pageHost: host,
-    visitorId: visitorId(),
-    referrer: document.referrer.slice(0, 1500),
-    createdAt: serverTimestamp()
-  }).catch(() => {});
-}
-        </script>
+        
   </head>
   <body>
     <div id="root"></div>
